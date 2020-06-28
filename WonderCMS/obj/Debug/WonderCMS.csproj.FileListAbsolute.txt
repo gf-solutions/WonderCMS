@@ -32,3 +32,4 @@ C:\Users\OHENE\Documents\Projects\WonderCMS\WonderCMS\obj\Debug\WonderCMS.csproj
 C:\Users\OHENE\Documents\Projects\WonderCMS\WonderCMS\obj\Debug\WonderCMS.csproj.CoreCompileInputs.cache
 C:\Users\OHENE\Documents\Projects\WonderCMS\WonderCMS\obj\Debug\WonderCMS.exe
 C:\Users\OHENE\Documents\Projects\WonderCMS\WonderCMS\obj\Debug\WonderCMS.pdb
+C:\Users\OHENE\Documents\Projects\WonderCMS\WonderCMS\obj\Debug\WonderCMS.EditReservation.resources

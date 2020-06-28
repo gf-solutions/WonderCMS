@@ -108,6 +108,48 @@ namespace WonderCMS
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updateForm();
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0 || listBox1.SelectedIndex >= listBox1.Items.Count)
+            {
+                MessageBox.Show("Please, select a reservation");
+                return;
+            }
+
+            reservation res = (reservation)listBox1.SelectedItem;
+
+            Hide();
+            EditReservation editReservation = new EditReservation(res);
+            editReservation.ShowDialog();
+
+            updateList();
+           
+            Show();
+
+        }
+
+        private void btnVisits_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex < 0 || listBox1.SelectedIndex >= listBox1.Items.Count)
+            {
+                MessageBox.Show("Please, select a reservation");
+                return;
+            }
+
+            reservation res = (reservation)listBox1.SelectedItem;
+            Hide();
+            Visits visits = new Visits(account_id, res.patient.Key, res.id);
+            visits.ShowDialog();
+            Show();
+
+        }
+
+        private void updateForm()
+        {
             if (listBox1.SelectedIndex < 0 || listBox1.SelectedIndex >= listBox1.Items.Count)
             {
                 MessageBox.Show("Please, select a reservation");
@@ -127,6 +169,11 @@ namespace WonderCMS
             else
                 btnEdit.Enabled = false;
 
+            //enabling button if account is doctor
+            if (account_type == 1)
+                btnVisits.Enabled = true;
+            else
+                btnVisits.Enabled = false;
         }
     }
 }

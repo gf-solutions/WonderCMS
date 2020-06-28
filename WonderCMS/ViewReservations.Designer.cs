@@ -37,6 +37,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnVisits = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -143,6 +144,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnVisits);
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.txtDate);
             this.groupBox2.Controls.Add(this.label8);
@@ -163,15 +165,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reservation Details";
             // 
+            // btnVisits
+            // 
+            this.btnVisits.Enabled = false;
+            this.btnVisits.Location = new System.Drawing.Point(297, 253);
+            this.btnVisits.Name = "btnVisits";
+            this.btnVisits.Size = new System.Drawing.Size(193, 32);
+            this.btnVisits.TabIndex = 13;
+            this.btnVisits.Text = "Visits";
+            this.btnVisits.UseVisualStyleBackColor = true;
+            this.btnVisits.Click += new System.EventHandler(this.btnVisits_Click);
+            // 
             // btnEdit
             // 
             this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(297, 245);
+            this.btnEdit.Location = new System.Drawing.Point(20, 253);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(193, 32);
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtDate
             // 
@@ -334,5 +348,6 @@
         private System.Windows.Forms.TextBox txtReservationID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnVisits;
     }
 }

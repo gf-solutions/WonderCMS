@@ -71,6 +71,12 @@
     <Compile Include="EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReservation.Designer.cs">
+      <DependentUpon>EditReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,13 @@
     <Compile Include="ViewReservations.Designer.cs">
       <DependentUpon>ViewReservations.cs</DependentUpon>
     </Compile>
+    <Compile Include="visit.cs" />
+    <Compile Include="Visits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visits.Designer.cs">
+      <DependentUpon>Visits.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReservation.resx">
+      <DependentUpon>EditReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -131,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="ViewReservations.resx">
       <DependentUpon>ViewReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visits.resx">
+      <DependentUpon>Visits.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
