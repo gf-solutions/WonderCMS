@@ -66,6 +66,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtAccountId = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtVAGender = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,6 +77,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbGender);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnCreateAccount);
             this.groupBox1.Controls.Add(this.rchNotes);
             this.groupBox1.Controls.Add(this.label7);
@@ -107,16 +113,16 @@
             // 
             // rchNotes
             // 
-            this.rchNotes.Location = new System.Drawing.Point(115, 307);
+            this.rchNotes.Location = new System.Drawing.Point(115, 345);
             this.rchNotes.Name = "rchNotes";
-            this.rchNotes.Size = new System.Drawing.Size(265, 192);
+            this.rchNotes.Size = new System.Drawing.Size(265, 154);
             this.rchNotes.TabIndex = 13;
             this.rchNotes.Text = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 307);
+            this.label7.Location = new System.Drawing.Point(14, 345);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 24);
             this.label7.TabIndex = 12;
@@ -128,7 +134,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "Nurse",
             "Doctor"});
-            this.cmbType.Location = new System.Drawing.Point(115, 269);
+            this.cmbType.Location = new System.Drawing.Point(115, 306);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(265, 30);
             this.cmbType.TabIndex = 11;
@@ -136,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 269);
+            this.label6.Location = new System.Drawing.Point(7, 306);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 24);
             this.label6.TabIndex = 10;
@@ -144,7 +150,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(115, 235);
+            this.txtPhone.Location = new System.Drawing.Point(115, 272);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(265, 28);
             this.txtPhone.TabIndex = 9;
@@ -152,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 235);
+            this.label5.Location = new System.Drawing.Point(7, 272);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 24);
             this.label5.TabIndex = 8;
@@ -160,7 +166,7 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(115, 201);
+            this.dtpDOB.Location = new System.Drawing.Point(115, 238);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(265, 28);
             this.dtpDOB.TabIndex = 7;
@@ -168,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 201);
+            this.label4.Location = new System.Drawing.Point(7, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 24);
             this.label4.TabIndex = 6;
@@ -176,7 +182,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(115, 167);
+            this.txtName.Location = new System.Drawing.Point(115, 166);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(265, 28);
             this.txtName.TabIndex = 5;
@@ -184,7 +190,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 167);
+            this.label3.Location = new System.Drawing.Point(7, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 24);
             this.label3.TabIndex = 4;
@@ -263,6 +269,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtVAGender);
+            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtVACreatedOn);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.rchVANotes);
@@ -307,16 +315,16 @@
             // rchVANotes
             // 
             this.rchVANotes.Enabled = false;
-            this.rchVANotes.Location = new System.Drawing.Point(126, 269);
+            this.rchVANotes.Location = new System.Drawing.Point(126, 316);
             this.rchVANotes.Name = "rchVANotes";
-            this.rchVANotes.Size = new System.Drawing.Size(232, 192);
+            this.rchVANotes.Size = new System.Drawing.Size(232, 145);
             this.rchVANotes.TabIndex = 18;
             this.rchVANotes.Text = "";
             // 
             // txtVAType
             // 
             this.txtVAType.Enabled = false;
-            this.txtVAType.Location = new System.Drawing.Point(126, 236);
+            this.txtVAType.Location = new System.Drawing.Point(126, 276);
             this.txtVAType.Name = "txtVAType";
             this.txtVAType.Size = new System.Drawing.Size(232, 28);
             this.txtVAType.TabIndex = 17;
@@ -324,7 +332,7 @@
             // txtVAPhone
             // 
             this.txtVAPhone.Enabled = false;
-            this.txtVAPhone.Location = new System.Drawing.Point(126, 200);
+            this.txtVAPhone.Location = new System.Drawing.Point(126, 240);
             this.txtVAPhone.Name = "txtVAPhone";
             this.txtVAPhone.Size = new System.Drawing.Size(232, 28);
             this.txtVAPhone.TabIndex = 16;
@@ -332,7 +340,7 @@
             // txtVADOB
             // 
             this.txtVADOB.Enabled = false;
-            this.txtVADOB.Location = new System.Drawing.Point(126, 166);
+            this.txtVADOB.Location = new System.Drawing.Point(126, 206);
             this.txtVADOB.Name = "txtVADOB";
             this.txtVADOB.Size = new System.Drawing.Size(232, 28);
             this.txtVADOB.TabIndex = 15;
@@ -350,7 +358,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 272);
+            this.label15.Location = new System.Drawing.Point(14, 319);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(64, 24);
             this.label15.TabIndex = 12;
@@ -359,7 +367,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 234);
+            this.label16.Location = new System.Drawing.Point(7, 274);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 24);
             this.label16.TabIndex = 10;
@@ -368,7 +376,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 200);
+            this.label17.Location = new System.Drawing.Point(7, 240);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(71, 24);
             this.label17.TabIndex = 8;
@@ -377,7 +385,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 166);
+            this.label18.Location = new System.Drawing.Point(7, 206);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(55, 24);
             this.label18.TabIndex = 6;
@@ -433,6 +441,43 @@
             this.label21.Size = new System.Drawing.Size(107, 24);
             this.label21.TabIndex = 0;
             this.label21.Text = "Account ID:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 204);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 24);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Gender:";
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbGender.Location = new System.Drawing.Point(115, 204);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(265, 30);
+            this.cmbGender.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 170);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 24);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Gender:";
+            // 
+            // txtVAGender
+            // 
+            this.txtVAGender.Enabled = false;
+            this.txtVAGender.Location = new System.Drawing.Point(126, 170);
+            this.txtVAGender.Name = "txtVAGender";
+            this.txtVAGender.Size = new System.Drawing.Size(232, 28);
+            this.txtVAGender.TabIndex = 22;
             // 
             // AdminPanel
             // 
@@ -500,5 +545,9 @@
         private System.Windows.Forms.TextBox txtVADOB;
         private System.Windows.Forms.TextBox txtVACreatedOn;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtVAGender;
+        private System.Windows.Forms.Label label10;
     }
 }

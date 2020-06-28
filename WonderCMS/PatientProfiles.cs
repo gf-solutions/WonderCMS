@@ -25,7 +25,7 @@ namespace WonderCMS
         private void updateList (string query)
         {
             command = conn.CreateCommand();
-            command.CommandText = "SELECT account_id, account_name, account_type FROM user_account WHERE account_type=2 AND (account_name LIKE @query OR account_phone LIKE @query)";
+            command.CommandText = "SELECT account_id, account_name, account_type FROM user_account WHERE account_type=2 AND (account_name LIKE @query OR account_phone LIKE @query OR account_opd_number LIKE @query)";
             command.Parameters.AddWithValue("@query", query + "%");
             conn.Open();
 
@@ -61,7 +61,7 @@ namespace WonderCMS
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             //input validation 
-            if (txtName.Text == "" || txtPhone.Text == "")
+            if (txtName.Text == "" || txtPhone.Text == "" || txtOPD.Text=="" || cmbGender.SelectedItem == null)
             {
                 MessageBox.Show("Please, check your input", "Entry Error");
                 return;
@@ -74,10 +74,12 @@ namespace WonderCMS
 
             ///account creation 
             command = conn.CreateCommand();
-            command.CommandText = "INSERT INTO user_account (account_name, account_dob, account_phone, account_notes, account_type, account_creation_date) " +
-                "VALUES (@name, @dob, @phone, @notes, 2, @date)";
+            command.CommandText = "INSERT INTO user_account (account_name, account_opd_number, account_gender, account_dob, account_phone, account_notes, account_type, account_creation_date) " +
+                "VALUES (@name, @account_opd_number, @account_gender, @dob, @phone, @notes, 2, @date)";
 
             command.Parameters.AddWithValue("@name", txtName.Text);
+            command.Parameters.AddWithValue("@account_opd_number", txtOPD.Text);
+            command.Parameters.AddWithValue("@account_gender", cmbGender.SelectedItem.ToString());
             command.Parameters.AddWithValue("@dob", dtpDOB.Value.ToString());
             command.Parameters.AddWithValue("@phone", txtPhone.Text);
             command.Parameters.AddWithValue("@notes", rchNotes.Text);
@@ -105,7 +107,7 @@ namespace WonderCMS
             int account_id = ((account)lBoxFindAccount.SelectedItem).getID();
 
             command = conn.CreateCommand();
-            command.CommandText = "SELECT account_name, account_dob, account_phone, account_notes, account_creation_date FROM user_account WHERE account_id=@id";
+            command.CommandText = "SELECT account_name, account_opd_number, account_gender, account_dob, account_phone, account_notes, account_creation_date FROM user_account WHERE account_id=@id";
             command.Parameters.AddWithValue("@id", account_id);
             
             conn.Open();
@@ -115,14 +117,16 @@ namespace WonderCMS
             {
                 txtAccountId.Text = account_id.ToString();
                 txtEAName.Text = reader.GetString(0);
+                txtEAOpd.Text = reader.GetString(1);
+                txtEAGender.Text = reader.GetString(2);
 
                 DateTime dob = new DateTime();
-                if (DateTime.TryParse(reader.GetValue(1).ToString(), out dob))
+                if (DateTime.TryParse(reader.GetValue(3).ToString(), out dob))
                     dtpDOB.Value = dob;
 
-                txtEAPhone.Text = reader.GetString(2);
-                rchEANotes.Text = reader.GetString(3);
-                txtEACreatedOn.Text = reader.GetValue(4).ToString();
+                txtEAPhone.Text = reader.GetString(4);
+                rchEANotes.Text = reader.GetString(5);
+                txtEACreatedOn.Text = reader.GetValue(6).ToString();
             }
 
             conn.Close();

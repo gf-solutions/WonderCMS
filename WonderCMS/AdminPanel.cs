@@ -111,7 +111,7 @@ namespace WonderCMS
             //sql connection 
             SqlConnection conn = new SqlConnection(connString);
             SqlCommand command = conn.CreateCommand();
-            command.CommandText = "Select username, account_name, account_dob, account_type, account_notes, " +
+            command.CommandText = "Select username, account_name, account_gender, account_dob, account_type, account_notes, " +
                 "account_creation_date, account_phone FROM [user], user_account WHERE [user].user_id = [user_account].account_user_id " +
                 "AND account_id = @id ";
             command.Parameters.AddWithValue("@id", account_id);
@@ -125,16 +125,17 @@ namespace WonderCMS
                 txtAccountId.Text = account_id.ToString();
                 txtVAUsername.Text = reader.GetValue(0).ToString();
                 txtVAName.Text = reader.GetValue(1).ToString();
-                txtVADOB.Text = reader.GetValue(2).ToString();
-                txtVAPhone.Text = reader.GetValue(6).ToString();
+                txtVAGender.Text = reader.GetValue(2).ToString();
+                txtVADOB.Text = reader.GetValue(3).ToString();
+                txtVAPhone.Text = reader.GetValue(7).ToString();
 
-                if (reader.GetInt32(3) == 0)
+                if (reader.GetInt32(4) == 0)
                     txtVAType.Text = "Nurse";
                 else
                     txtVAType.Text = "Doctor";
 
-                rchVANotes.Text = reader.GetValue(4).ToString();
-                txtVACreatedOn.Text = reader.GetValue(5).ToString();
+                rchVANotes.Text = reader.GetValue(5).ToString();
+                txtVACreatedOn.Text = reader.GetValue(6).ToString();
 
             }
 
@@ -163,13 +164,14 @@ namespace WonderCMS
 
                         int user_id = (int)command.ExecuteScalar();
 
-                        command.CommandText = "INSERT INTO user_account (account_user_id, account_name, account_dob, " +
+                        command.CommandText = "INSERT INTO user_account (account_user_id, account_name,account_gender, account_dob, " +
                             " account_phone,   account_type, account_notes, account_creation_date  )" +
-                            "VALUES (@user_id, @name, @dob, @phone, @type, @notes, @date)";
+                            "VALUES (@user_id, @name,@account_gender, @dob, @phone, @type, @notes, @date)";
 
                         command.Parameters.Clear();
                         command.Parameters.AddWithValue("@user_id", user_id);
                         command.Parameters.AddWithValue("@name", txtName.Text);
+                        command.Parameters.AddWithValue("@account_gender", cmbGender.SelectedItem.ToString());
                         command.Parameters.AddWithValue("@dob", dtpDOB.Value.ToString());
                         command.Parameters.AddWithValue("@phone", txtPhone.Text);
                         command.Parameters.AddWithValue("@type", cmbType.SelectedIndex);
@@ -236,6 +238,7 @@ namespace WonderCMS
             txtAccountId.Clear();
             txtVAUsername.Clear();
             txtVAName.Clear();
+            txtVAGender.Clear();
             txtVADOB.Clear();
             txtVAPhone.Clear();
             txtVAType.Clear();
