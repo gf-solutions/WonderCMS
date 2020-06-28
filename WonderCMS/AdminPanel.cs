@@ -186,7 +186,7 @@ namespace WonderCMS
                             txtName.Clear();
                             txtPhone.Clear();
                             rchNotes.Clear();
-                            cmbType.Items.Clear();
+                            //cmbType.Items.Clear();
 
                         }
                         else

@@ -185,5 +185,10 @@ namespace WonderCMS
         {
             Clear();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            Utilis.createAdmin("12345");
+        }
     }
 }

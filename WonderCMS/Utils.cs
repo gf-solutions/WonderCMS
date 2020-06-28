@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Data.SqlClient; 
 
 namespace WonderCMS
 {
@@ -34,6 +35,32 @@ namespace WonderCMS
             slots.Add(10, "Slot 10: From 10:30 PM to 11:00 PM");
 
             return slots;
+        }
+
+        public static void createAdmin(string password)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LJULP6P\SQLEXPRESS;Initial Catalog=WonderHerbalDB;
+                                Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;
+                                ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlCommand command = conn.CreateCommand();
+
+            command.CommandText = "INSERT INTO [user] (username, password) VALUES (@username, @password) ";
+            command.Parameters.AddWithValue("@username", "admin");
+            command.Parameters.AddWithValue("@password", hashPassword(password));
+
+            conn.Open();
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+            }
+
+            conn.Close(); 
+
         }
     }
 }
